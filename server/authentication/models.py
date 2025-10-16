@@ -7,7 +7,7 @@ class User(AbstractUser):
     first_name=models.CharField(max_length=250)
     last_name=models.CharField(max_length=250)
     email=models.EmailField(unique=True)
-    last_login = models.DateTimeField()
+    last_login = models.DateTimeField(null=True, blank=True)
     
     USERNAME_FIELD='email'
     REQUIRED_FIELDS=['first_name','last_name','username']
