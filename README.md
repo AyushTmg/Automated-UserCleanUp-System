@@ -36,6 +36,8 @@
     POSTGRES_PASSWORD=your_database_password
     POSTGRES_HOST=127.0.0.1
     POSTGRES_PORT=5432
+    JOB_RUN_INTERVAL_MINUTES=1
+
 
 #### 6- Migrate the changes to your database
 
@@ -47,6 +49,10 @@
         python manage.py runserver
         celery -A beat worker -l info
         celery -A main worker -l info
+
+
+
+
 
 
 ## Installation For Client Side
@@ -65,7 +71,10 @@
 
 This document provides a brief overview of the available API endpoints and their usage.
 
----
+
+
+
+
 
 ## User Authentication & Management
 
@@ -89,7 +98,10 @@ This document provides a brief overview of the available API endpoints and their
 - **Method:** POST
 - **Description:** Used to refresh the access token using a valid refresh token.
 
----
+
+
+
+
 
 ## Cleanup Reports & Actions
 
