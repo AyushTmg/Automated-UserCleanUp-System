@@ -61,6 +61,52 @@
         npm run dev 
 
 
+# API Endpoints Documentation
+
+This document provides a brief overview of the available API endpoints and their usage.
+
+---
+
+## User Authentication & Management
+
+### 1. Register User
+- **Endpoint:** `/register/`
+- **Method:** POST
+- **Description:** Used for user registration. Accepts user details and creates a new user account.
+
+### 2. Login User
+- **Endpoint:** `/login/`
+- **Method:** POST
+- **Description:** Used for user login. Generates JWT access and refresh tokens if credentials are valid; otherwise, returns an error.
+
+### 3. Change Password
+- **Endpoint:** `/change-password/`
+- **Method:** POST
+- **Description:** Used to change the password of a logged-in user. Requires authentication.
+
+### 4. Token Refresh
+- **Endpoint:** `/token/refresh/`
+- **Method:** POST
+- **Description:** Used to refresh the access token using a valid refresh token.
+
+---
+
+## Cleanup Reports & Actions
+
+### 5. Latest Reports
+- **Endpoint:** `/reports/latest/`
+- **Method:** GET
+- **Description:** Returns a list of cleanup reports, sorted with the most recent reports at the top.
+
+### 6. Manual Cleanup Trigger
+- **Endpoint:** `/cleanup/trigger/`
+- **Method:** POST
+- **Description:** Used to manually trigger a user cleanup process.
+
+---
+
+
+
 
 
 
