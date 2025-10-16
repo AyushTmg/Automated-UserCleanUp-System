@@ -16,6 +16,7 @@ def cleanup_inactive_users():
     inactive_users = User.objects.filter(last_login__lt=threshold_date)
     users_deleted_count = inactive_users.count()
     
+    receipients_list = list(inactive_users.values_list('email', flat=True))
     inactive_users.delete()
     
     active_users_remaining_count = User.objects.filter(is_active=True).count()
@@ -25,7 +26,6 @@ def cleanup_inactive_users():
         active_users_remaining=active_users_remaining_count
     )
 
-    receipients_list = list(inactive_users.values_list('email', flat=True))
     subject = "Account Cleanup Notification"
     from_email = settings.DEFAULT_FROM_EMAIL
     context = {
