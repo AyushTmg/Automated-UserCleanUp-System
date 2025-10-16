@@ -6,6 +6,6 @@ from .views import (
 
 
 urlpatterns = [
-    path('cleanup-reports/', CleanupReportListView.as_view(), name='cleanup-reports'),
-    path('trigger/', ManualCleanUpTriggerView.as_view(), name='manual-cleanup-trigger'),
+    path('reports/latest/', CleanupReportListView.as_view(), name='cleanup-reports'),
+    path('cleanup/trigger/', ManualCleanUpTriggerView.as_view(), name='manual-cleanup-trigger'),
 ]
