@@ -65,6 +65,7 @@ class UserLoginView(APIView):
         if user is not None:
             token=get_tokens_for_user(user)
             user.last_login = timezone.now()
+            user.save()
             return cr.success(
                 data=token,
                 message="You have been successfully logged in",
