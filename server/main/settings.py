@@ -171,3 +171,6 @@ CORS_ALLOW_ALL_ORIGINS=True
 
 # ! Delete Inactive Users After certain days
 DELETE_INACTIVE_USERS_AFTER_DAYS = os.environ.get('DELETE_INACTIVE_USERS_AFTER_DAYS',1)
+
+# ! Automated User Clean Up Job Run Interval in Minutes
+JOB_RUN_INTERVAL_MINUTES = os.environ.get('JOB_RUN_INTERVAL_MINUTES',1)

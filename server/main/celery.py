@@ -1,8 +1,10 @@
 import os
 from celery import Celery
 from celery.schedules import crontab
+from django.conf import settings
 from dotenv import load_dotenv
 load_dotenv()
+
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings')
 
@@ -14,6 +16,6 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'Task One': {
         'task': 'cleanup_inactive_users_task',
-        'schedule': crontab(minute='*/1'),  
+        'schedule': crontab(minute=f'*/{settings.JOB_RUN_INTERVAL_MINUTES}'),  
     },
 }
