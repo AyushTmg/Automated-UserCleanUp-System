@@ -1,0 +1,10 @@
+.env
+db.sqlite3
+Pipfile
+__pycache__
+venv
+/static
+celerybeat-schedule.db
+dump.rdb
+qcluster.log
+worker.log

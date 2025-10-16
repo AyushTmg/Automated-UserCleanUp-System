@@ -1,0 +1,50 @@
+
+services:
+  server:
+    build:
+      context: ./server
+    container_name: app_server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./server:/app
+    env_file:
+      - ./server/.env
+    depends_on:
+      - db
+    command: sh start.sh
+    networks:
+      - app-network
+
+  client:
+    build:
+      context: ./client
+    container_name: app_client
+    ports:
+      - "80:80"
+    volumes:
+      - ./client/src:/app/src
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+  db:
+    image: postgres:16
+    container_name: app_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
