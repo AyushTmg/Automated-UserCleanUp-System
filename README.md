@@ -66,6 +66,11 @@
 #### 3- Run the development server
         npm run dev 
 
+# Design Choices & Project Structure
+
+The project is built with a focus on readability, reusability, and scalability. Each feature 
+is organized into separate modules and directories to keep the code clean and easy to follow. 
+This structure makes it simple to update or add new features, while keeping the project well-organized and maintainable.
 
 # API Endpoints Documentation
 
@@ -73,11 +78,6 @@ This document provides a brief overview of the available API endpoints and their
 
 
 
-# Design Choices & Project Structure
-
-The project is built with a focus on readability, reusability, and scalability. Each feature 
-is organized into separate modules and directories to keep the code clean and easy to follow. 
-This structure makes it simple to update or add new features, while keeping the project well-organized and maintainable.
 
 
 ## User Authentication & Management
